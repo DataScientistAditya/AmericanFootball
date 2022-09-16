@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/esm/Container";
 import { Card, Col, Row } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
@@ -17,9 +17,25 @@ const HeaderImage = require("./BodyImage.jpg");
 const ImageMiddle = require("./football.png");
 const FooterImage = require("./footerImage.png");
 const LogoImage = require("../Navbar/logo-New.png");
-const Video = require("./vids.mp4");
+const Video = require("../../static/videos/video1.webm");
+const nflimage=require("../../static/images/image1.jpg");
+const nflimage2=require("../../static/images/image2.jpg");
+const nflimage3=require("../../static/images/image3.jpg");
+const nflimage4=require("../../static/images/image4.jpg");
+const nflimage5=require("../../static/images/image5.jpg");
+const nflimage6=require("../../static/images/image6.jpg")
+const nflimage7=require("../../static/images/image7.jpg");
+const nflimage8=require("../../static/images/image8.png");
+const nflimage9=require("../../static/images/image9.jpg");
+
+
+
 
 const LandingBodyComp=()=>{
+
+
+  
+    const [colorButton,setColorButton] = useState("primary");
     const nav = useNavigate();
     return(
         <>
@@ -30,7 +46,7 @@ const LandingBodyComp=()=>{
                 <div className="ml-auto" style={{backgroundColor:"rgba(0,0,0,0.5)", width:"100%",height:(WindowWidth>=1280)?700:300,position:"absolute",top:0,left:0,zIndex:-1}}></div>
                     <div className="ml-auto" style={{width:"100%",height:(WindowWidth>=1280)?600:200,overflow:"hidden",zIndex:-2}}>
                         <video autoPlay={true} muted loop={true} style={{width:"100%", resize:"cover"}}>
-                            <source type="video/mp4"  src={Video}></source>
+                            <source type="video/webm"  src={Video}></source>
                         </video>
                         
                     </div>
@@ -41,7 +57,13 @@ const LandingBodyComp=()=>{
 
                         
                         {(WindowWidth>=1024)?
-                        <Button variant="primary" onClick={()=>nav("/membership")} size="lg" style={{marginTop:80,height:80,minWidth:300}} className="outline-warning">LETS GO</Button>:
+                        <Button 
+                                onMouseEnter={()=>setColorButton("secondary")} 
+                                onMouseOut={()=>setColorButton("primary")}
+                                variant={colorButton} onClick={()=>nav("/membership")} 
+                                size="lg" 
+                                style={{marginTop:80,height:80,minWidth:300,cursor:"pointer"} } 
+                                className="outline-warning"> LETS GO </Button>:
                         <div></div>}
                     
                 </div>
@@ -50,24 +72,20 @@ const LandingBodyComp=()=>{
                 {/* Upper Middle */}
                 <Row className="justify-content-center" style={{backgroundColor:"#00538C",maxHeight:"40%"}}>
                     <div className="ml-auto" style={{marginTop:80}}>
-                        <Col md={4} xxl lg="6">
+                        {/* <Col md={4} xxl lg="6">
                             <div className="text-center">
                                 <h4 style={{color:"#fff", fontSize:(WindowWidth>=1280)?74:45,fontWeight:(WindowWidth>=1280)?"bolder":600}}>BUILD TEAM</h4>
                             </div>
-                        </Col>
-                        <Col md={{ span: 4, offset: 1 }} xxl lg="6">
+                        </Col> */}
+                        {/* <Col md={{ span: 4, offset: 1 }} xxl lg="6">
                             <div className="text-center">
                                 <h4 style={{color:"#fff", fontSize:(WindowWidth>=1280)?74:45, fontWeight:(WindowWidth>=1280)?"bolder":600}}>BET SMART</h4>
                             </div>
-                        </Col>
+                        </Col> */}
                     </div>
-                    <div className="ml-auto" style={{width:"50%",height:(WindowWidth>=1280)?400:200,overflow:"hidden",marginLeft:(WindowWidth>=1280)?250:0}}>
+                    {/* <div className="ml-auto" style={{width:"50%",height:(WindowWidth>=1280)?400:200,overflow:"hidden",marginLeft:(WindowWidth>=1280)?250:0}}>
                         <img src={ImageMiddle} style={{width:"100%", resize:"cover"}}></img>
-                    </div>
-                    
-                    <div className="text-center" style={{marginTop:30}}>
-                        <Button variant="primary" onClick={()=>nav("/membership")} size="lg" style={{minWidth:300,height:80}} className="outline-warning">GET STARTED</Button>
-                    </div>
+                    </div> */}
 
                     <div className="text-center" style={{marginTop:30}}>
                         <h4 style={{color:"#fff", fontSize:(WindowWidth>=1280)?35:22}}>As See On</h4>
@@ -87,6 +105,13 @@ const LandingBodyComp=()=>{
                             <FaYahoo style={{fontSize:100,color:"#fff"}}></FaYahoo>
                         </div>
                     </Col>
+                    <div className="text-center" style={{marginTop:30}}>
+                        <Button
+                         onMouseEnter={()=>setColorButton("secondary")} 
+                         onMouseOut={()=>setColorButton("primary")}
+                         variant={colorButton} onClick={()=>nav("/membership")} size="lg" style={{minWidth:300,height:80,cursor:"pointer"}} className="outline-warning">GET STARTED</Button>
+
+                    </div>
                     <hr style={{color:"#fff",marginTop:10}}></hr>
                 </Row >
                 {/* Middle */}
@@ -94,39 +119,42 @@ const LandingBodyComp=()=>{
                 <Row className="justify-content-center" style={{backgroundColor:"#00538C",maxHeight:"40%"}}>
                 <Row className="justify-content-center">
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body >
-                                <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                           
+                                <div className="ms-auto" style={{position:"relative",width:180,height:180}}>
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                            <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage}></img>
                                     </div>
-                            </Card.Body>
+                           
                             
                        </Card>
                         
                     </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body>
-                                    <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                            
+                                    <div className="ms-auto" style={{position:"relative",width:180,height:180}} >
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                            <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage2}></img>
                                     </div>
 
-                            </Card.Body>
+                            
                             
                        </Card>
                         
                     </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body>
-                                <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                            
+                                <div className="ms-auto"  style={{position:"relative",width:180,height:180}} >
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                             <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage3}></img>
                                     </div>
 
-                            </Card.Body>
+                          
                             
                        </Card>
                         
@@ -134,40 +162,43 @@ const LandingBodyComp=()=>{
                 </Row>
                 <Row className="justify-content-center">
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body>
-                            <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                           
+                            <div className="ms-auto" style={{position:"relative",width:180,height:180}}>
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                              <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage4}></img>
                                     </div>
 
-                            </Card.Body>
+                            
                            
                        </Card>
                         
                     </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body>
-                                <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                           
+                                <div className="ms-auto" style={{position:"relative",width:180,height:180}}>
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                              <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage5}></img>
                                 </div>
 
-                            </Card.Body>
+                         
                           
                        </Card>
                         
                     </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body>
-                                <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                            
+                                <div className="ms-auto"  style={{position:"relative",width:180,height:180}}>
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                              <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage6}></img>
                                     </div>
 
-                            </Card.Body>
+                            
                            
                        </Card>
                         
@@ -175,46 +206,52 @@ const LandingBodyComp=()=>{
                 </Row>
                 <Row className="justify-content-center">
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                            
                                 
-                                    <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                                    <div className="ms-auto" style={{position:"relative",width:180,height:180}}>
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                            <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage7}></img>
                                     </div>
-                            </Card.Body>
+                            
                             
                        </Card>
                         
                     </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body>
-                                        <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                            
+                                        <div className="ms-auto" style={{position:"relative",width:180,height:180}}>
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                             <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage8}></img>
                                         </div>
-                            </Card.Body>
+                            
                          
                        </Card>
                         
                     </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:180,height:180}}>
-                            <Card.Body>
-                                    <div className="text-center">
-                                            <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
-                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                            
+                                    <div className="ms-auto"  style={{position:"relative",width:180,height:180}}>
+                                            {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+                                            <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
+                                            <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage9}></img>
                                     </div>
 
-                            </Card.Body>
+                            
                             
                        </Card>
                         
                     </Col>
                 </Row>
                 <div className="text-center" style={{marginTop:30}}>
-                    <Button variant="primary" onClick={()=>nav("/shop")} size="lg" style={{minWidth:300,height:80}} className="outline-warning">NEW OFFERS</Button>
+                    <Button
+                     onMouseEnter={()=>setColorButton("secondary")} 
+                     onMouseOut={()=>setColorButton("primary")}
+                     variant={colorButton} onClick={()=>nav("/shop")} size="lg" style={{minWidth:300,height:80,cursor:"pointer"}} className="outline-warning">NEW OFFERS</Button>
                 </div>
                 <hr style={{color:"#fff",marginTop:10}}></hr>
                 </Row>:
@@ -361,7 +398,10 @@ const LandingBodyComp=()=>{
                         </Col>
                     </Row>
                     <div className="text-center" style={{marginTop:30}}>
-                        <Button onClick={()=>nav("/picks")} variant="primary" size="lg" style={{minWidth:300,height:80}} className="outline-warning">LATEST PICKS</Button>
+                        <Button onClick={()=>nav("/picks")} 
+                         onMouseEnter={()=>setColorButton("secondary")} 
+                         onMouseOut={()=>setColorButton("primary")}
+                        variant={colorButton} size="lg" style={{minWidth:300,height:80,cursor:"pointer"}} className="outline-warning">LATEST PICKS</Button>
                     </div>
                     <hr style={{color:"#fff",marginTop:10}}></hr>
                 </Row>}
@@ -386,7 +426,10 @@ const LandingBodyComp=()=>{
                    
                     
                     <div className="text-center" style={{marginTop:30,marginBottom:10}}>
-                        <Button onClick={()=>nav("/picks")}  variant="primary" size="lg" style={{minWidth:300,height:80}} className="outline-warning">BE A HERO</Button>
+                        <Button onClick={()=>nav("/picks")} 
+                         onMouseEnter={()=>setColorButton("secondary")} 
+                         onMouseOut={()=>setColorButton("primary")}
+                         variant={colorButton} size="lg" style={{minWidth:300,height:80,cursor:"pointer"}} className="outline-warning">BE A HERO</Button>
                     </div>
 
                     
