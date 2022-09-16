@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/esm/Container";
 import { Card, Col, Row } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
@@ -17,7 +17,7 @@ const HeaderImage = require("./BodyImage.jpg");
 const ImageMiddle = require("./football.png");
 const FooterImage = require("./footerImage.png");
 const LogoImage = require("../Navbar/logo-New.png");
-const Video = require("./vids.mp4");
+const Video = require("../../static/videos/video1.webm");
 const nflimage=require("../../static/images/image1.jpg");
 const nflimage2=require("../../static/images/image2.jpg");
 const nflimage3=require("../../static/images/image3.jpg");
@@ -26,9 +26,16 @@ const nflimage5=require("../../static/images/image5.jpg");
 const nflimage6=require("../../static/images/image6.jpg")
 const nflimage7=require("../../static/images/image7.jpg");
 const nflimage8=require("../../static/images/image8.png");
-const nflimage9=require("../../static/images/image9.jpg")
+const nflimage9=require("../../static/images/image9.jpg");
+
+
+
 
 const LandingBodyComp=()=>{
+
+
+  
+    const [colorButton,setColorButton] = useState("primary");
     const nav = useNavigate();
     return(
         <>
@@ -39,7 +46,7 @@ const LandingBodyComp=()=>{
                 <div className="ml-auto" style={{backgroundColor:"rgba(0,0,0,0.5)", width:"100%",height:(WindowWidth>=1280)?700:300,position:"absolute",top:0,left:0,zIndex:-1}}></div>
                     <div className="ml-auto" style={{width:"100%",height:(WindowWidth>=1280)?600:200,overflow:"hidden",zIndex:-2}}>
                         <video autoPlay={true} muted loop={true} style={{width:"100%", resize:"cover"}}>
-                            <source type="video/mp4"  src={Video}></source>
+                            <source type="video/webm"  src={Video}></source>
                         </video>
                         
                     </div>
@@ -50,7 +57,13 @@ const LandingBodyComp=()=>{
 
                         
                         {(WindowWidth>=1024)?
-                        <Button variant="primary" onClick={()=>nav("/membership")} size="lg" style={{marginTop:80,height:80,minWidth:300}} className="outline-warning">LETS GO</Button>:
+                        <Button 
+                                onMouseEnter={()=>setColorButton("secondary")} 
+                                onMouseOut={()=>setColorButton("primary")}
+                                variant={colorButton} onClick={()=>nav("/membership")} 
+                                size="lg" 
+                                style={{marginTop:80,height:80,minWidth:300,cursor:"pointer"} } 
+                                className="outline-warning"> LETS GO </Button>:
                         <div></div>}
                     
                 </div>
@@ -93,7 +106,11 @@ const LandingBodyComp=()=>{
                         </div>
                     </Col>
                     <div className="text-center" style={{marginTop:30}}>
-                        <Button variant="primary" onClick={()=>nav("/membership")} size="lg" style={{minWidth:300,height:80}} className="outline-warning">GET STARTED</Button>
+                        <Button
+                         onMouseEnter={()=>setColorButton("secondary")} 
+                         onMouseOut={()=>setColorButton("primary")}
+                         variant={colorButton} onClick={()=>nav("/membership")} size="lg" style={{minWidth:300,height:80,cursor:"pointer"}} className="outline-warning">GET STARTED</Button>
+
                     </div>
                     <hr style={{color:"#fff",marginTop:10}}></hr>
                 </Row >
@@ -231,7 +248,10 @@ const LandingBodyComp=()=>{
                     </Col>
                 </Row>
                 <div className="text-center" style={{marginTop:30}}>
-                    <Button variant="primary" onClick={()=>nav("/shop")} size="lg" style={{minWidth:300,height:80}} className="outline-warning">NEW OFFERS</Button>
+                    <Button
+                     onMouseEnter={()=>setColorButton("secondary")} 
+                     onMouseOut={()=>setColorButton("primary")}
+                     variant={colorButton} onClick={()=>nav("/shop")} size="lg" style={{minWidth:300,height:80,cursor:"pointer"}} className="outline-warning">NEW OFFERS</Button>
                 </div>
                 <hr style={{color:"#fff",marginTop:10}}></hr>
                 </Row>:
@@ -378,7 +398,10 @@ const LandingBodyComp=()=>{
                         </Col>
                     </Row>
                     <div className="text-center" style={{marginTop:30}}>
-                        <Button onClick={()=>nav("/picks")} variant="primary" size="lg" style={{minWidth:300,height:80}} className="outline-warning">LATEST PICKS</Button>
+                        <Button onClick={()=>nav("/picks")} 
+                         onMouseEnter={()=>setColorButton("secondary")} 
+                         onMouseOut={()=>setColorButton("primary")}
+                        variant={colorButton} size="lg" style={{minWidth:300,height:80,cursor:"pointer"}} className="outline-warning">LATEST PICKS</Button>
                     </div>
                     <hr style={{color:"#fff",marginTop:10}}></hr>
                 </Row>}
@@ -403,7 +426,10 @@ const LandingBodyComp=()=>{
                    
                     
                     <div className="text-center" style={{marginTop:30,marginBottom:10}}>
-                        <Button onClick={()=>nav("/picks")}  variant="primary" size="lg" style={{minWidth:300,height:80}} className="outline-warning">BE A HERO</Button>
+                        <Button onClick={()=>nav("/picks")} 
+                         onMouseEnter={()=>setColorButton("secondary")} 
+                         onMouseOut={()=>setColorButton("primary")}
+                         variant={colorButton} size="lg" style={{minWidth:300,height:80,cursor:"pointer"}} className="outline-warning">BE A HERO</Button>
                     </div>
 
                     
