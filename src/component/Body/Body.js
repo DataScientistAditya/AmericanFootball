@@ -279,12 +279,16 @@ const LandingBodyComp=()=>{
                         <Col xs lg ="3">
                             <div className="rounded-circle"  
                                 style={{
-                                    position:"relative",width:140,height:140, overflow:"hidden", marginTop:20}}>
+                                    position:"relative",width:140,height:140, overflow:"hidden", marginTop:20
+                                    }}
+                                    onClick={()=>nav("/shop")}>
                                 <img  style={{position:"absolute",width:140,height:140,objectfit:"fill"}} src={nflimage}></img>
                             </div>
                             <div className="rounded-circle"  
                                 style={{
-                                    position:"relative",width:140,height:140, overflow:"hidden", marginTop:20}}>
+                                    position:"relative",width:140,height:140, overflow:"hidden", marginTop:20
+                                    }}
+                                    onClick={()=>nav("/shop")}>
                                 <img  style={{position:"absolute",width:140,height:140,objectfit:"fill"}} src={nflimage3}></img>
                             </div>
                             <div className="rounded-circle"  
