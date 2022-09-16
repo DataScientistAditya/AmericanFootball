@@ -1,10 +1,45 @@
-import React from "react";
+import React,{useState} from "react";
 import { Button, Form } from "react-bootstrap";
-
+import axios from "axios";
 
 const FormComp=()=>{
+    const [email,setEmail] = useState("");
+    const [username,setUsername] = useState("");
+    const [password,setPassword] = useState("");
+
+
+    const HandleRegistration=async(e)=>{
+        e.preventDefault();
+        const registrationData = {
+            "email":email,
+            "username":username,
+            "password":password
+        }
+
+        console.log(registrationData)
+        // try{
+        //     const Resp = await axios.post("https://lmsbackendapis.herokuapp.com/lms/CreateClass/",registrationData);
+        //     const Data = Resp.data;
+        //     console.log(Data);
+        //     SetMessege(Data.msg)
+        //     e.target.reset();
+        // }
+        // catch(err){
+        //     if (err.response) {
+        //         // ✅ log status code here
+        //         console.log(err.response.status);
+        //         console.log(err.message);
+        //         console.log(err.response.headers); // 👉️ {... response headers here}
+        //         console.log(err.response.data); // 👉️ {... response data here}
+        //         SetMessege(err.message);
+        //         e.target.reset();
+        //       }
+        // }
+
+    }
+
     return(
-        <Form>
+        <Form onSubmit={HandleRegistration}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label style={{color:"#fff"}}>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
