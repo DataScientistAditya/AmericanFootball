@@ -7,81 +7,24 @@ import HeaderLogo from "../../HeaderLogo/HeaderLogo";
 
 const WindowWidth  = (typeof window !== undefined)? window.innerWidth:null
 
-const BlackJacket = require("./Images/BlackJackets.png");
-const WhiteJacket = require("./Images/WhiteJacket.png");
-const OrangeJacket = require("./Images/OrangeJacket.png");
+const nflimage=require("../../../static/images/image1.jpg");
+const nflimage2=require("../../../static/images/image2.jpg");
+const nflimage3=require("../../../static/images/image3.jpg");
+const nflimage4=require("../../../static/images/image4.jpg");
+const nflimage5=require("../../../static/images/image5.jpg");
+const nflimage6=require("../../../static/images/image6.jpg")
+const nflimage7=require("../../../static/images/image7.jpg");
+const nflimage8=require("../../../static/images/image8.png");
+const nflimage9=require("../../../static/images/image9.jpg");
 
-const BlackCap = require("./Images/BalckCap.png");
-const WhiteCap = require("./Images/WhiteCap.png");
-const RedCap = require("./Images/RedCap.png");
 
-const BlueBag = require("./Images/BagBlue.png");
-const Graybag = require("./Images/YellowBag.png");
 
-const BlackTShirt = require("./Images/BlackTshirt.png");
-const WhiteTShirt = require("./Images/WhiteTshirt.png");
-const RedTShirt = require("./Images/RedTShirt.png");
+const nflimage10=require("../../../static/images/image10.jpeg");
+const nflimage11=require("../../../static/images/image11.jpeg");
+const nflimage12=require("../../../static/images/image12.jpeg");
+const nflimage13=require("../../../static/images/image13.jpeg");
 
 const ShopScreencomp=()=>{
-    const [JacketSlectValue,SetJacketSelectValue] = useState("Black");
-    const [CapSlectValue,SetCapSelectValue] = useState("Black");
-    const [TshirtSlectValue,SetTshirtSelectValue] = useState("Black");
-    const [BagSlectValue,SetBagSelectValue] = useState("Blue");
-
-    const [jacket,SetJacket] = useState(BlackJacket);
-    const [cap,SetCap] = useState(BlackCap);
-    const [bag,SetBag] = useState(BlueBag);
-    const [Tshirt,SetTshirt] = useState(BlackTShirt)
-
-
-    const ChangeJacketImage=()=>{
-        if (JacketSlectValue === "Black") {
-            SetJacket(BlackJacket);
-        }else if (JacketSlectValue === "White") {
-            SetJacket(WhiteJacket)
-        }else{
-            SetJacket(OrangeJacket)
-        }
-    };
-    const ChangeCap=()=>{
-        if (CapSlectValue === "Black") {
-            SetCap(BlackCap);
-        }else if (CapSlectValue === "White") {
-            SetCap(WhiteCap)
-        }else{
-            SetCap(RedCap)
-        }
-    };
-    const ChangeBag=()=>{
-        if (BagSlectValue === "Blue") {
-            SetBag(BlueBag);
-        }else{
-            SetBag(Graybag)
-        }
-    };
-    const ChangeTShirtImage=()=>{
-        if (TshirtSlectValue === "Black") {
-            SetTshirt(BlackTShirt);
-        }else if (TshirtSlectValue === "White") {
-            SetTshirt(WhiteTShirt)
-        }else{
-            SetTshirt(RedTShirt)
-        }
-    };
-    useEffect(()=>{
-        ChangeJacketImage()
-    },[JacketSlectValue]) 
-    
-    useEffect(()=>{
-        ChangeCap()
-    },[CapSlectValue]) 
-    useEffect(()=>{
-        ChangeBag()
-    },[BagSlectValue]) 
-
-    useEffect(()=>{
-        ChangeTShirtImage()
-    },[TshirtSlectValue]) 
     return(
         <>
              <HeaderLogo></HeaderLogo>
@@ -96,17 +39,21 @@ const ShopScreencomp=()=>{
                 </Row>
                 <Row className="justify-content-center" style={{position:"relative",backgroundColor:"#00538C",maxHeight:"20%"}}>
                     <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C"}}>
+                        <Card className="shadow-lg" style={{backgroundColor:"#00538C", minHeight:500,height:520, maxHeight:550}}>
                             
                             <Card.Body >
                                 <div className="text-center">
-                                    <img style={{width:200, height:200,position:"relative"}} src={jacket}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} onChange={(e)=>SetJacketSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Orange">Orange</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
+                                    <img 
+                                        style={{width:200, height:200,position:"relative"}} 
+                                        src={nflimage2}></img>
+                                     <h1 
+                                            style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:28, fontWeight:"bolder",marginTop:20}}>
+                                                MAJOR LEAGUE BASEBALL
+                                    </h1>
+                                    <p style={{textAlign:"center",color:"#fff",fontFamily:"Roboto", fontSize:16,marginTop:10}}>
+                                    MAJOR LEAGUE BASEBALL MONTHLY. 30 DAYS*
+                                    </p>
+                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:24,marginTop:10,fontWeight:"bold"}}>$1299</h4>
                                 </div>
                             </Card.Body>
                             <Card.Footer>
@@ -117,19 +64,21 @@ const ShopScreencomp=()=>{
                         </Card>
                     </Col>
                     <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:300}}>
+                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:500,height:520, maxHeight:550}}>
                             
                             <Card.Body >
                                 <div className="text-center">
                                     <img style={{width:200, height:200,position:"relative"}} 
-                                        src={cap}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetCapSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Red">Red</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
+                                        src={nflimage3}></img>
+                                   
+                                   <h1 
+                                            style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:28, fontWeight:"bolder",marginTop:20}}>
+                                                NBA MONTHLY
+                                    </h1>
+                                    <p style={{textAlign:"center",color:"#fff",fontFamily:"Roboto", fontSize:16,marginTop:10}}>
+                                    NFL PLAYS FOR 1 MONTH. 30 DAYS*
+                                    </p>
+                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:24,marginTop:10,fontWeight:"bold"}}>$1799</h4>
                                 </div>
                             </Card.Body>
                             <Card.Footer>
@@ -140,18 +89,21 @@ const ShopScreencomp=()=>{
                         </Card>
                     </Col>
                     <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:300}}>
+                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:500,height:520, maxHeight:550}}>
                             
                             <Card.Body >
                                 <div className="text-center">
                                     <img style={{width:200, height:200,position:"relative"}} 
-                                        src={bag}></img>
-                                    <select defaultValue="blue" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetBagSelectValue(e.target.value)}>
-                                        <option value="Black">Blue</option>
-                                        <option value="White">Yellow</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
+                                        src={nflimage4}></img>
+                                  
+                                    <h1 
+                                            style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:28, fontWeight:"bolder",marginTop:20}}>
+                                                SUNDAY NIGHT FOOTBALL
+                                    </h1>
+                                    <p style={{textAlign:"center",color:"#fff",fontFamily:"Roboto", fontSize:16,marginTop:10}}>
+                                        WEEK 1. CHARGERS VS CHIEFS 7PM EST* $49.95
+                                    </p>
+                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:24,marginTop:10,fontWeight:"bold"}}>$599</h4>
                                 </div>
                             </Card.Body>
                             <Card.Footer>
@@ -162,19 +114,15 @@ const ShopScreencomp=()=>{
                         </Card>
                     </Col>
                     <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C"}}>
+                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:500,height:520, maxHeight:550}}>
                             
                             <Card.Body >
                                 <div className="text-center">
                                     <img style={{width:200, height:200,position:"relative"}} 
-                                    src={Tshirt}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetTshirtSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Orange">Red</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
+                                    src={nflimage5}></img>
+                                    <h1 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:28, fontWeight:"bolder",marginTop:20}}>THURSDAY NIGHT FOOTBALL</h1>
+                                    <p style={{textAlign:"center",color:"#fff",fontFamily:"Roboto", fontSize:16,marginTop:10}}>WEEK 1. CHARGERS VS CHIEFS 7PM EST* $49.95</p>
+                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:24,marginTop:10, fontWeight:"bold"}}>$299</h4>
                                 </div>
                             </Card.Body>
                             <Card.Footer>
@@ -188,17 +136,21 @@ const ShopScreencomp=()=>{
                 </Row>
                 <Row className="justify-content-center" style={{position:"relative",backgroundColor:"#00538C",maxHeight:"20%"}}>
                     <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C"}}>
+                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:500,height:520, maxHeight:550}}>
                             
                             <Card.Body >
                                 <div className="text-center">
-                                    <img style={{width:200, height:200,position:"relative"}} src={jacket}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} onChange={(e)=>SetJacketSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Orange">Orange</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
+                                    <img style={{width:200, height:200,position:"relative"}} 
+                                    src={nflimage10}></img>
+                                  
+                                  <h1 
+                                            style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:28, fontWeight:"bolder",marginTop:20}}>
+                                                WEEKLY ALL SPORTS
+                                    </h1>
+                                    <p style={{textAlign:"center",color:"#fff",fontFamily:"Roboto", fontSize:16,marginTop:10}}>
+                                        ALL SPORT PRICE *
+                                    </p>
+                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:24,marginTop:10,fontWeight:"bold"}}>$499</h4>
                                 </div>
                             </Card.Body>
                             <Card.Footer>
@@ -209,19 +161,21 @@ const ShopScreencomp=()=>{
                         </Card>
                     </Col>
                     <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:300}}>
+                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:500,height:520, maxHeight:550}}>
                             
                             <Card.Body >
                                 <div className="text-center">
                                     <img style={{width:200, height:200,position:"relative"}} 
-                                        src={cap}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetCapSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Red">Red</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
+                                        src={nflimage11}></img>
+                                  
+                                  <h1 
+                                            style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:28, fontWeight:"bolder",marginTop:20}}>
+                                                LOCK OF THE DAY
+                                    </h1>
+                                    <p style={{textAlign:"center",color:"#fff",fontFamily:"Roboto", fontSize:16,marginTop:10}}>
+                                        WGUARANTEED WINNER OR WE REFUND YOUR PURCHASE PRICE
+                                    </p>
+                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:24,marginTop:10,fontWeight:"bold"}}>$999</h4>
                                 </div>
                             </Card.Body>
                             <Card.Footer>
@@ -232,18 +186,21 @@ const ShopScreencomp=()=>{
                         </Card>
                     </Col>
                     <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:300}}>
+                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:500,height:520, maxHeight:550}}>
                             
                             <Card.Body >
                                 <div className="text-center">
                                     <img style={{width:200, height:200,position:"relative"}} 
-                                        src={bag}></img>
-                                    <select defaultValue="blue" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetBagSelectValue(e.target.value)}>
-                                        <option value="Black">Blue</option>
-                                        <option value="White">Yellow</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
+                                        src={nflimage8}></img>
+                                   
+                                     <h1 
+                                            style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:28, fontWeight:"bolder",marginTop:20}}>
+                                                NBA MONTHLY
+                                    </h1>
+                                    <p style={{textAlign:"center",color:"#fff",fontFamily:"Roboto", fontSize:16,marginTop:10}}>
+                                    NFL PLAYS FOR 1 MONTH. 30 DAYS*
+                                    </p>
+                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:24,marginTop:10,fontWeight:"bold"}}>$2099</h4>
                                 </div>
                             </Card.Body>
                             <Card.Footer>
@@ -254,19 +211,21 @@ const ShopScreencomp=()=>{
                         </Card>
                     </Col>
                     <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C"}}>
+                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:500,height:520, maxHeight:550}}>
                             
                             <Card.Body >
                                 <div className="text-center">
                                     <img style={{width:200, height:200,position:"relative"}} 
-                                    src={Tshirt}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetTshirtSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Orange">Red</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
+                                    src={nflimage12}></img>
+                                   
+                                   <h1 
+                                            style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:28, fontWeight:"bolder",marginTop:20}}>
+                                                WEEKLY TENIS
+                                    </h1>
+                                    <p style={{textAlign:"center",color:"#fff",fontFamily:"Roboto", fontSize:16,marginTop:10}}>
+                                    TENISS PLAYS FOR 1 WEEK, 7 DAYS*
+                                    </p>
+                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:24,marginTop:10,fontWeight:"bold"}}>$1799</h4>
                                 </div>
                             </Card.Body>
                             <Card.Footer>
@@ -278,98 +237,7 @@ const ShopScreencomp=()=>{
                     </Col>   
                     
                 </Row>
-                <Row className="justify-content-center" style={{position:"relative",backgroundColor:"#00538C",maxHeight:"20%"}}>
-                    <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C"}}>
-                            
-                            <Card.Body >
-                                <div className="text-center">
-                                    <img style={{width:200, height:200,position:"relative"}} src={jacket}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} onChange={(e)=>SetJacketSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Orange">Orange</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
-                                </div>
-                            </Card.Body>
-                            <Card.Footer>
-                                <div className="text-center">
-                                    <Button variant="primary" size="lg" style={{marginTop:20,minWidth:"100%",fontFamily:"roboto"}}>ADD TO CART</Button>
-                                </div>
-                            </Card.Footer>
-                        </Card>
-                    </Col>
-                    <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:300}}>
-                            
-                            <Card.Body >
-                                <div className="text-center">
-                                    <img style={{width:200, height:200,position:"relative"}} 
-                                        src={cap}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetCapSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Red">Red</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
-                                </div>
-                            </Card.Body>
-                            <Card.Footer>
-                                <div className="text-center">
-                                    <Button variant="primary" size="lg" style={{marginTop:20,minWidth:"100%",fontFamily:"roboto"}}>ADD TO CART</Button>
-                                </div>
-                            </Card.Footer>
-                        </Card>
-                    </Col>
-                    <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C",minHeight:300}}>
-                            
-                            <Card.Body >
-                                <div className="text-center">
-                                    <img style={{width:200, height:200,position:"relative"}} 
-                                        src={bag}></img>
-                                    <select defaultValue="blue" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetBagSelectValue(e.target.value)}>
-                                        <option value="Black">Blue</option>
-                                        <option value="White">Yellow</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
-                                </div>
-                            </Card.Body>
-                            <Card.Footer>
-                                <div className="text-center">
-                                    <Button variant="primary" size="lg" style={{marginTop:20,minWidth:"100%",fontFamily:"roboto"}}>ADD TO CART</Button>
-                                </div>
-                            </Card.Footer>
-                        </Card>
-                    </Col>
-                    <Col md={4} xxl lg="3" style={{marginTop:"2rem", marginBottom:"2rem"}}>
-                        <Card className="shadow-lg" style={{backgroundColor:"#00538C"}}>
-                            
-                            <Card.Body >
-                                <div className="text-center">
-                                    <img style={{width:200, height:200,position:"relative"}} 
-                                    src={Tshirt}></img>
-                                    <select defaultValue="balck" style={{color:"white",backgroundColor:"black",marginTop:10}} 
-                                        onChange={(e)=>SetTshirtSelectValue(e.target.value)}>
-                                        <option value="Black">Black</option>
-                                        <option value="White">White</option>
-                                        <option value="Orange">Red</option>
-                                    </select>
-                                    <h4 style={{textAlign:"center",color:"#fff",fontFamily:"sans-serif", fontSize:45,marginTop:10}}>$299</h4>
-                                </div>
-                            </Card.Body>
-                            <Card.Footer>
-                                <div className="text-center">
-                                    <Button variant="primary" size="lg" style={{marginTop:20,minWidth:"100%",fontFamily:"roboto"}}>ADD TO CART</Button>
-                                </div>
-                            </Card.Footer>
-                        </Card>
-                    </Col>   
-                    
-                </Row>
+                
                 <FooterComp></FooterComp>
             </Container>
         </>

@@ -16,6 +16,8 @@ const ImageMiddle = require("./football.png");
 const FooterImage = require("./footerImage.png");
 const LogoImage = require("../Navbar/logo-New.png");
 const Video = require("../../static/videos/video1.webm");
+
+
 const nflimage=require("../../static/images/image1.jpg");
 const nflimage2=require("../../static/images/image2.jpg");
 const nflimage3=require("../../static/images/image3.jpg");
@@ -38,6 +40,16 @@ const LandingBodyComp=()=>{
 
   
     const [colorButton,setColorButton] = useState("primary");
+
+    const [button1RadiusColor,setButton1RadiusColor] = useState("#2F71C1");
+    const [button2RadiusColor,setButton2RadiusColor] = useState("#2F71C1");
+    const [button3RadiusColor,setButton3RadiusColor] = useState("#2F71C1");
+    const [button4RadiusColor,setButton4RadiusColor] = useState("#2F71C1");
+    const [button5RadiusColor,setButton5RadiusColor] = useState("#2F71C1");
+    const [button6RadiusColor,setButton6RadiusColor] = useState("#2F71C1");
+    const [button7RadiusColor,setButton7RadiusColor] = useState("#2F71C1");
+    const [button8RadiusColor,setButton8RadiusColor] = useState("#2F71C1");
+    const [button9RadiusColor,setButton9RadiusColor] = useState("#2F71C1");
     const nav = useNavigate();
     return(
         <>
@@ -124,9 +136,25 @@ const LandingBodyComp=()=>{
                     <Row className="justify-content-center">
                         <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
 
-                        <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                        <Card bg="dark" variant="dark" className="rounded-circle shadow" 
+                                style={{
+                                    width:(WindowWidth>=1550)?250:180,
+                                    height:(WindowWidth>=1550)?250:180,
+                                    overflow:"hidden",
+                                    borderColor:button1RadiusColor,
+                                    borderWidth:4,
+                                    borderStyle:"solid"}} 
+                                    onClick={()=>nav("/shop")}
+                                    onMouseEnter={()=>setButton1RadiusColor("#FFED14")} 
+                                    onMouseOut={()=>setButton1RadiusColor("#2F71C1")}>
                             
-                                    <div className="ms-auto" style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180}}>
+                                    <div className="ms-auto"
+                                        
+                                        style={{position:"relative",
+                                                width:(WindowWidth>=1550)?250:180,
+                                                height:(WindowWidth>=1550)?250:180,
+                                                cursor:"pointer",
+                                                }}>
                                         {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                         <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                         <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage}></img>
@@ -142,10 +170,25 @@ const LandingBodyComp=()=>{
                     
                                 
 
-                        <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                        <Card bg="dark" variant="dark" className="rounded-circle shadow" 
+                            style={{
+                                width:(WindowWidth>=1550)?250:180,
+                                height:(WindowWidth>=1550)?250:180,
+                                overflow:"hidden",
+                                borderColor:button2RadiusColor,
+                                borderWidth:4,
+                                borderStyle:"solid"}} 
+                                onClick={()=>nav("/shop")}
+                                onMouseEnter={()=>setButton2RadiusColor("#FFED14")} 
+                                onMouseOut={()=>setButton2RadiusColor("#2F71C1")}>
 
                                 
-                                <div className="ms-auto" style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180}} >
+                                <div className="ms-auto" 
+                                        style={{
+                                            position:"relative",
+                                            width:(WindowWidth>=1550)?250:180,
+                                            height:(WindowWidth>=1550)?250:180,
+                                            cursor:"pointer"}} >
                                         {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                         <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                         <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage2}></img>
@@ -157,9 +200,25 @@ const LandingBodyComp=()=>{
 
                             
 
-                            <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                            <Card bg="dark" variant="dark" className="rounded-circle shadow" 
+                                 style={{
+                                    width:(WindowWidth>=1550)?250:180,
+                                    height:(WindowWidth>=1550)?250:180,
+                                    overflow:"hidden",
+                                    borderColor:button3RadiusColor,
+                                    borderWidth:4,
+                                    borderStyle:"solid"}} 
+                                    onClick={()=>nav("/shop")}
+                                    onMouseEnter={()=>setButton3RadiusColor("#FFED14")} 
+                                    onMouseOut={()=>setButton3RadiusColor("#2F71C1")}
+                                >
                                     
-                                    <div className="ms-auto"  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180}} >
+                                    <div className="ms-auto"  
+                                                style={{
+                                                    position:"relative",
+                                                    width:(WindowWidth>=1550)?250:180,
+                                                    height:(WindowWidth>=1550)?250:180,
+                                                    cursor:"pointer"}} >
                                                 {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                                 <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                                     <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage3}></img>
@@ -173,9 +232,25 @@ const LandingBodyComp=()=>{
                     <Row className="justify-content-center">
                         <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
 
-                        <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                        <Card bg="dark" variant="dark" className="rounded-circle shadow" 
+                             style={{
+                                width:(WindowWidth>=1550)?250:180,
+                                height:(WindowWidth>=1550)?250:180,
+                                overflow:"hidden",
+                                borderColor:button4RadiusColor,
+                                borderWidth:4,
+                                borderStyle:"solid"}} 
+                                onClick={()=>nav("/shop")}
+                                onMouseEnter={()=>setButton4RadiusColor("#FFED14")} 
+                                onMouseOut={()=>setButton4RadiusColor("#2F71C1")}
+                            >
                             
-                                <div className="ms-auto" style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180}}>
+                                <div className="ms-auto" 
+                                    style={{
+                                        position:"relative",
+                                        width:(WindowWidth>=1550)?250:180,
+                                        height:(WindowWidth>=1550)?250:180,
+                                        cursor:"pointer"}}>
                                         <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage12}></img>
                                 </div>
 
@@ -187,9 +262,25 @@ const LandingBodyComp=()=>{
                         </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
 
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow" 
+                             style={{
+                                width:(WindowWidth>=1550)?250:180,
+                                height:(WindowWidth>=1550)?250:180,
+                                overflow:"hidden",
+                                borderColor:button5RadiusColor,
+                                borderWidth:4,
+                                borderStyle:"solid"}} 
+                                onClick={()=>nav("/shop")}
+                                onMouseEnter={()=>setButton5RadiusColor("#FFED14")} 
+                                onMouseOut={()=>setButton5RadiusColor("#2F71C1")}
+                            >
                            
-                                <div className="ms-auto" style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180}}>
+                                <div className="ms-auto" 
+                                        style={{
+                                            position:"relative",
+                                            width:(WindowWidth>=1550)?250:180,
+                                            height:(WindowWidth>=1550)?250:180,
+                                            cursor:"pointer"}}>
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                               <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage11}></img>
@@ -205,9 +296,25 @@ const LandingBodyComp=()=>{
 
                      
                         
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow" style={{width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow" 
+                             style={{
+                                width:(WindowWidth>=1550)?250:180,
+                                height:(WindowWidth>=1550)?250:180,
+                                overflow:"hidden",
+                                borderColor:button6RadiusColor,
+                                borderWidth:4,
+                                borderStyle:"solid"}} 
+                                onClick={()=>nav("/shop")}
+                                onMouseEnter={()=>setButton6RadiusColor("#FFED14")} 
+                                onMouseOut={()=>setButton6RadiusColor("#2F71C1")}
+                            >
                             
-                                <div className="ms-auto"  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180}}>
+                                <div className="ms-auto"  
+                                        style={{
+                                            position:"relative",
+                                            width:(WindowWidth>=1550)?250:180,
+                                            height:(WindowWidth>=1550)?250:180,
+                                            cursor:"pointer"}}>
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                               <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage13}></img>
@@ -222,10 +329,25 @@ const LandingBodyComp=()=>{
                 </Row>
                 <Row className="justify-content-center">
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" 
+                             style={{
+                                width:(WindowWidth>=1550)?250:180,
+                                height:(WindowWidth>=1550)?250:180,
+                                overflow:"hidden",
+                                borderColor:button7RadiusColor,
+                                borderWidth:4,
+                                borderStyle:"solid"}} 
+                                onClick={()=>nav("/shop")}
+                                onMouseEnter={()=>setButton7RadiusColor("#FFED14")} 
+                                onMouseOut={()=>setButton7RadiusColor("#2F71C1")}
+                            >
                             
                                 
-                                    <div className="ms-auto" style={{position:"relative",width:180,height:180}}>
+                                    <div className="ms-auto" 
+                                        style={{position:"relative",
+                                                width:(WindowWidth>=1550)?250:180,
+                                                height:(WindowWidth>=1550)?250:180,
+                                                cursor:"pointer"}}>
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                             <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage7}></img>
@@ -236,9 +358,25 @@ const LandingBodyComp=()=>{
                         
                     </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" 
+                         style={{
+                            width:(WindowWidth>=1550)?250:180,
+                            height:(WindowWidth>=1550)?250:180,
+                            overflow:"hidden",
+                            borderColor:button8RadiusColor,
+                            borderWidth:4,
+                            borderStyle:"solid"}} 
+                            onClick={()=>nav("/shop")}
+                            onMouseEnter={()=>setButton8RadiusColor("#FFED14")} 
+                            onMouseOut={()=>setButton8RadiusColor("#2F71C1")}
+                        >
                             
-                                        <div className="ms-auto" style={{position:"relative",width:180,height:180}}>
+                                        <div className="ms-auto" 
+                                            style={{
+                                                position:"relative",
+                                                width:(WindowWidth>=1550)?250:180,
+                                                height:(WindowWidth>=1550)?250:180,
+                                                cursor:"pointer"}}>
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                              <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage8}></img>
@@ -249,17 +387,30 @@ const LandingBodyComp=()=>{
                         
                     </Col>
                     <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
-                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" style={{width:180,height:180,overflow:"hidden"}} onClick={()=>nav("/membership")}>
+                       <Card bg="dark" variant="dark" className="rounded-circle shadow-sm" 
+                             style={{
+                                width:(WindowWidth>=1550)?250:180,
+                                height:(WindowWidth>=1550)?250:180,
+                                overflow:"hidden",
+                                borderColor:button9RadiusColor,
+                                borderWidth:4,
+                                borderStyle:"solid"}} 
+                                onClick={()=>nav("/shop")}
+                                onMouseEnter={()=>setButton9RadiusColor("#FFED14")} 
+                                onMouseOut={()=>setButton9RadiusColor("#2F71C1")}
+                            >
                             
-                                    <div className="ms-auto"  style={{position:"relative",width:180,height:180}}>
+                                    <div className="ms-auto"  
+                                        style={{
+                                            position:"relative",
+                                            width:(WindowWidth>=1550)?250:180,
+                                            height:(WindowWidth>=1550)?250:180,
+                                            cursor:"pointer"}}>
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                             <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage9}></img>
                                     </div>
-
-                            
-                            
-                       </Card>
+                        </Card>
                         
                     </Col>
                 </Row>
