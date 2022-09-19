@@ -254,23 +254,23 @@ const LandingBodyComp=()=>{
                                         height:(WindowWidth>=1550)?250:180,
                                         cursor:"pointer"}}>
                                            {(button4RadiusColor==="block")?
-                                           <div className="ms-auto"
-                                           style={{
-                                               position:"absolute",
-                                               width:"100%",
-                                               height:"100%",
-                                               backgroundColor:"rgba(0,0,0,0.5)"
-                                           }}>
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
 
-                                      </div>:
-                                      <div className="ms-auto"
-                                      style={{
-                                          position:"absolute",
-                                          width:"100%",
-                                          height:"100%",
-                                      }}>
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
 
-                                 </div>}
+                                                </div>}
                                         <img  style={
                                             {position:"absolute",
                                             width:(WindowWidth>=1550)?250:180,
