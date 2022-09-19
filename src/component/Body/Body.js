@@ -41,12 +41,12 @@ const LandingBodyComp=()=>{
   
     const [colorButton,setColorButton] = useState("primary");
 
-    const [button1RadiusColor,setButton1RadiusColor] = useState("#2F71C1");
-    const [button2RadiusColor,setButton2RadiusColor] = useState("#2F71C1");
-    const [button3RadiusColor,setButton3RadiusColor] = useState("#2F71C1");
-    const [button4RadiusColor,setButton4RadiusColor] = useState("#2F71C1");
-    const [button5RadiusColor,setButton5RadiusColor] = useState("#2F71C1");
-    const [button6RadiusColor,setButton6RadiusColor] = useState("#2F71C1");
+    const [button1RadiusColor,setButton1RadiusColor] = useState("none");
+    const [button2RadiusColor,setButton2RadiusColor] = useState("none");
+    const [button3RadiusColor,setButton3RadiusColor] = useState("none");
+    const [button4RadiusColor,setButton4RadiusColor] = useState("none");
+    const [button5RadiusColor,setButton5RadiusColor] = useState("none");
+    const [button6RadiusColor,setButton6RadiusColor] = useState("none");
     const [button7RadiusColor,setButton7RadiusColor] = useState("#2F71C1");
     const [button8RadiusColor,setButton8RadiusColor] = useState("#2F71C1");
     const [button9RadiusColor,setButton9RadiusColor] = useState("#2F71C1");
@@ -230,6 +230,7 @@ const LandingBodyComp=()=>{
                         </Col>
                     </Row>
                     <Row className="justify-content-center">
+                        {/* made the changes here =>>>> */}
                         <Col  xs lg="3" className="ms-auto" style={{marginTop:30}}>
 
                         <Card bg="dark" variant="dark" className="rounded-circle shadow" 
@@ -237,21 +238,47 @@ const LandingBodyComp=()=>{
                                 width:(WindowWidth>=1550)?250:180,
                                 height:(WindowWidth>=1550)?250:180,
                                 overflow:"hidden",
-                                borderColor:button4RadiusColor,
                                 borderWidth:4,
-                                borderStyle:"solid"}} 
+                                borderStyle:"solid",
+                                zIndex:5}} 
                                 onClick={()=>nav("/shop")}
-                                onMouseEnter={()=>setButton4RadiusColor("#FFED14")} 
-                                onMouseOut={()=>setButton4RadiusColor("#2F71C1")}
+                                onMouseEnter={()=>setButton4RadiusColor("block")} 
+                                onMouseOut={()=>setButton4RadiusColor("none")}
                             >
                             
                                 <div className="ms-auto" 
+                                    
                                     style={{
                                         position:"relative",
                                         width:(WindowWidth>=1550)?250:180,
                                         height:(WindowWidth>=1550)?250:180,
                                         cursor:"pointer"}}>
-                                        <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage12}></img>
+                                           {(button4RadiusColor==="block")?
+                                           <div className="ms-auto"
+                                           style={{
+                                               position:"absolute",
+                                               width:"100%",
+                                               height:"100%",
+                                               backgroundColor:"rgba(0,0,0,0.5)"
+                                           }}>
+
+                                      </div>:
+                                      <div className="ms-auto"
+                                      style={{
+                                          position:"absolute",
+                                          width:"100%",
+                                          height:"100%",
+                                      }}>
+
+                                 </div>}
+                                        <img  style={
+                                            {position:"absolute",
+                                            width:(WindowWidth>=1550)?250:180,
+                                            height:(WindowWidth>=1550)?250:180,
+                                            objectfit:"fill",
+                                        zIndex:-1}} 
+
+                                            src={nflimage12}></img>
                                 </div>
 
 
@@ -267,20 +294,29 @@ const LandingBodyComp=()=>{
                                 width:(WindowWidth>=1550)?250:180,
                                 height:(WindowWidth>=1550)?250:180,
                                 overflow:"hidden",
-                                borderColor:button5RadiusColor,
                                 borderWidth:4,
                                 borderStyle:"solid"}} 
                                 onClick={()=>nav("/shop")}
-                                onMouseEnter={()=>setButton5RadiusColor("#FFED14")} 
-                                onMouseOut={()=>setButton5RadiusColor("#2F71C1")}
+                                onMouseEnter={()=>setButton5RadiusColor("block")} 
+                                onMouseOut={()=>setButton5RadiusColor("none")}
                             >
-                           
+                                <div className="ms-auto"
+                                    style={{
+                                        position:"absolute",
+                                        width:(WindowWidth>=1550)?250:180,
+                                        height:(WindowWidth>=1550)?250:180,
+                                        cursor:"pointer",
+                                        backgroundColor:"rgba(0,0,0,0.5)",
+                                        zIndex:5,
+                                        display:button5RadiusColor}}>
+                                </div>
                                 <div className="ms-auto" 
                                         style={{
                                             position:"relative",
                                             width:(WindowWidth>=1550)?250:180,
                                             height:(WindowWidth>=1550)?250:180,
-                                            cursor:"pointer"}}>
+                                            cursor:"pointer",
+                                            zIndex:4}}>
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
                                               <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage11}></img>
@@ -308,7 +344,15 @@ const LandingBodyComp=()=>{
                                 onMouseEnter={()=>setButton6RadiusColor("#FFED14")} 
                                 onMouseOut={()=>setButton6RadiusColor("#2F71C1")}
                             >
-                            
+                                <div className="ms-auto"
+                                    style={{
+                                        position:"absolute",
+                                        width:(WindowWidth>=1550)?250:180,
+                                        height:(WindowWidth>=1550)?250:180,
+                                        cursor:"pointer",
+                                        backgroundColor:"rgba(0,0,0,0.5)",
+                                        zIndex:5}}>
+                                </div>
                                 <div className="ms-auto"  
                                         style={{
                                             position:"relative",
