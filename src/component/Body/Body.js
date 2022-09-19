@@ -47,9 +47,9 @@ const LandingBodyComp=()=>{
     const [button4RadiusColor,setButton4RadiusColor] = useState("none");
     const [button5RadiusColor,setButton5RadiusColor] = useState("none");
     const [button6RadiusColor,setButton6RadiusColor] = useState("none");
-    const [button7RadiusColor,setButton7RadiusColor] = useState("#2F71C1");
-    const [button8RadiusColor,setButton8RadiusColor] = useState("#2F71C1");
-    const [button9RadiusColor,setButton9RadiusColor] = useState("#2F71C1");
+    const [button7RadiusColor,setButton7RadiusColor] = useState("none");
+    const [button8RadiusColor,setButton8RadiusColor] = useState("none");
+    const [button9RadiusColor,setButton9RadiusColor] = useState("none");
     const nav = useNavigate();
     return(
         <>
@@ -141,12 +141,13 @@ const LandingBodyComp=()=>{
                                     width:(WindowWidth>=1550)?250:180,
                                     height:(WindowWidth>=1550)?250:180,
                                     overflow:"hidden",
-                                    borderColor:button1RadiusColor,
                                     borderWidth:4,
                                     borderStyle:"solid"}} 
                                     onClick={()=>nav("/shop")}
-                                    onMouseEnter={()=>setButton1RadiusColor("#FFED14")} 
-                                    onMouseOut={()=>setButton1RadiusColor("#2F71C1")}>
+                                    onMouseEnter={()=>setButton1RadiusColor("block")} 
+                                    onMouseOut={()=>setButton1RadiusColor("none")}>
+
+
                             
                                     <div className="ms-auto"
                                         
@@ -155,9 +156,30 @@ const LandingBodyComp=()=>{
                                                 height:(WindowWidth>=1550)?250:180,
                                                 cursor:"pointer",
                                                 }}>
-                                        {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
+
+
+                                               {(button1RadiusColor==="block")?
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
+
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
+
+                                                </div>}
+
+                                         {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                         <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
-                                        <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage}></img>
+                                        <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill",zIndex:-1}} src={nflimage}></img>
                                     </div>
 
                             
@@ -175,12 +197,11 @@ const LandingBodyComp=()=>{
                                 width:(WindowWidth>=1550)?250:180,
                                 height:(WindowWidth>=1550)?250:180,
                                 overflow:"hidden",
-                                borderColor:button2RadiusColor,
                                 borderWidth:4,
                                 borderStyle:"solid"}} 
                                 onClick={()=>nav("/shop")}
-                                onMouseEnter={()=>setButton2RadiusColor("#FFED14")} 
-                                onMouseOut={()=>setButton2RadiusColor("#2F71C1")}>
+                                onMouseEnter={()=>setButton2RadiusColor("block")} 
+                                onMouseOut={()=>setButton2RadiusColor("none")}>
 
                                 
                                 <div className="ms-auto" 
@@ -189,9 +210,30 @@ const LandingBodyComp=()=>{
                                             width:(WindowWidth>=1550)?250:180,
                                             height:(WindowWidth>=1550)?250:180,
                                             cursor:"pointer"}} >
+
+
+                                            {(button2RadiusColor==="block")?
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
+
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
+
+                                                </div>}
+
                                         {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                         <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
-                                        <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage2}></img>
+                                        <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill",zIndex:-1}} src={nflimage2}></img>
                                 </div>
                         </Card>
                             
@@ -205,12 +247,11 @@ const LandingBodyComp=()=>{
                                     width:(WindowWidth>=1550)?250:180,
                                     height:(WindowWidth>=1550)?250:180,
                                     overflow:"hidden",
-                                    borderColor:button3RadiusColor,
                                     borderWidth:4,
                                     borderStyle:"solid"}} 
                                     onClick={()=>nav("/shop")}
-                                    onMouseEnter={()=>setButton3RadiusColor("#FFED14")} 
-                                    onMouseOut={()=>setButton3RadiusColor("#2F71C1")}
+                                    onMouseEnter={()=>setButton3RadiusColor("block")} 
+                                    onMouseOut={()=>setButton3RadiusColor("none")}
                                 >
                                     
                                     <div className="ms-auto"  
@@ -219,9 +260,30 @@ const LandingBodyComp=()=>{
                                                     width:(WindowWidth>=1550)?250:180,
                                                     height:(WindowWidth>=1550)?250:180,
                                                     cursor:"pointer"}} >
+
+                                              {(button3RadiusColor==="block")?
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
+
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
+
+                                                </div>}
+
+
                                                 {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                                 <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
-                                                    <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage3}></img>
+                                                    <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill",zIndex:-1}} src={nflimage3}></img>
                                     </div>
 
                                     
@@ -300,26 +362,37 @@ const LandingBodyComp=()=>{
                                 onMouseEnter={()=>setButton5RadiusColor("block")} 
                                 onMouseOut={()=>setButton5RadiusColor("none")}
                             >
-                                <div className="ms-auto"
-                                    style={{
-                                        position:"absolute",
-                                        width:(WindowWidth>=1550)?250:180,
-                                        height:(WindowWidth>=1550)?250:180,
-                                        cursor:"pointer",
-                                        backgroundColor:"rgba(0,0,0,0.5)",
-                                        zIndex:5,
-                                        display:button5RadiusColor}}>
-                                </div>
+                               
                                 <div className="ms-auto" 
                                         style={{
                                             position:"relative",
                                             width:(WindowWidth>=1550)?250:180,
                                             height:(WindowWidth>=1550)?250:180,
-                                            cursor:"pointer",
-                                            zIndex:4}}>
+                                            cursor:"pointer"
+                                        }}>
+
+                                              {(button5RadiusColor==="block")?
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
+
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
+
+                                                </div>}
+
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
-                                              <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage11}></img>
+                                              <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill",zIndex:-1}} src={nflimage11}></img>
 
                                 </div>
 
@@ -337,31 +410,43 @@ const LandingBodyComp=()=>{
                                 width:(WindowWidth>=1550)?250:180,
                                 height:(WindowWidth>=1550)?250:180,
                                 overflow:"hidden",
-                                borderColor:button6RadiusColor,
                                 borderWidth:4,
                                 borderStyle:"solid"}} 
                                 onClick={()=>nav("/shop")}
-                                onMouseEnter={()=>setButton6RadiusColor("#FFED14")} 
-                                onMouseOut={()=>setButton6RadiusColor("#2F71C1")}
+                                onMouseEnter={()=>setButton6RadiusColor("block")} 
+                                onMouseOut={()=>setButton6RadiusColor("none")}
                             >
-                                <div className="ms-auto"
-                                    style={{
-                                        position:"absolute",
-                                        width:(WindowWidth>=1550)?250:180,
-                                        height:(WindowWidth>=1550)?250:180,
-                                        cursor:"pointer",
-                                        backgroundColor:"rgba(0,0,0,0.5)",
-                                        zIndex:5}}>
-                                </div>
-                                <div className="ms-auto"  
+                               
+                                
+                                     <div className="ms-auto"  
                                         style={{
                                             position:"relative",
                                             width:(WindowWidth>=1550)?250:180,
                                             height:(WindowWidth>=1550)?250:180,
                                             cursor:"pointer"}}>
+
+                                         {(button6RadiusColor==="block")?
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
+
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
+
+                                                </div>}
+
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
-                                              <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill"}} src={nflimage13}></img>
+                                              <img  style={{position:"relative",width:(WindowWidth>=1550)?250:180,height:(WindowWidth>=1550)?250:180,objectfit:"fill",zIndex:-1}} src={nflimage13}></img>
 
                                     </div>
 
@@ -378,12 +463,11 @@ const LandingBodyComp=()=>{
                                 width:(WindowWidth>=1550)?250:180,
                                 height:(WindowWidth>=1550)?250:180,
                                 overflow:"hidden",
-                                borderColor:button7RadiusColor,
                                 borderWidth:4,
                                 borderStyle:"solid"}} 
                                 onClick={()=>nav("/shop")}
-                                onMouseEnter={()=>setButton7RadiusColor("#FFED14")} 
-                                onMouseOut={()=>setButton7RadiusColor("#2F71C1")}
+                                onMouseEnter={()=>setButton7RadiusColor("block")} 
+                                onMouseOut={()=>setButton7RadiusColor("none")}
                             >
                             
                                 
@@ -392,9 +476,29 @@ const LandingBodyComp=()=>{
                                                 width:(WindowWidth>=1550)?250:180,
                                                 height:(WindowWidth>=1550)?250:180,
                                                 cursor:"pointer"}}>
+
+                                           {(button7RadiusColor==="block")?
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
+
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
+
+                                                </div>}
+
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
-                                            <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage7}></img>
+                                            <img  style={{position:"relative",width:180,height:180,objectfit:"fill",zIndex:-1}} src={nflimage7}></img>
                                     </div>
                             
                             
@@ -407,12 +511,11 @@ const LandingBodyComp=()=>{
                             width:(WindowWidth>=1550)?250:180,
                             height:(WindowWidth>=1550)?250:180,
                             overflow:"hidden",
-                            borderColor:button8RadiusColor,
                             borderWidth:4,
                             borderStyle:"solid"}} 
                             onClick={()=>nav("/shop")}
-                            onMouseEnter={()=>setButton8RadiusColor("#FFED14")} 
-                            onMouseOut={()=>setButton8RadiusColor("#2F71C1")}
+                            onMouseEnter={()=>setButton8RadiusColor("block")} 
+                            onMouseOut={()=>setButton8RadiusColor("none")}
                         >
                             
                                         <div className="ms-auto" 
@@ -421,9 +524,29 @@ const LandingBodyComp=()=>{
                                                 width:(WindowWidth>=1550)?250:180,
                                                 height:(WindowWidth>=1550)?250:180,
                                                 cursor:"pointer"}}>
+
+                                            {(button8RadiusColor==="block")?
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
+
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
+
+                                                </div>}
+
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
-                                             <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage8}></img>
+                                             <img  style={{position:"relative",width:180,height:180,objectfit:"fill",zIndex:-1}} src={nflimage8}></img>
                                         </div>
                             
                          
@@ -436,12 +559,11 @@ const LandingBodyComp=()=>{
                                 width:(WindowWidth>=1550)?250:180,
                                 height:(WindowWidth>=1550)?250:180,
                                 overflow:"hidden",
-                                borderColor:button9RadiusColor,
                                 borderWidth:4,
                                 borderStyle:"solid"}} 
                                 onClick={()=>nav("/shop")}
-                                onMouseEnter={()=>setButton9RadiusColor("#FFED14")} 
-                                onMouseOut={()=>setButton9RadiusColor("#2F71C1")}
+                                onMouseEnter={()=>setButton9RadiusColor("block")} 
+                                onMouseOut={()=>setButton9RadiusColor("none")}
                             >
                             
                                     <div className="ms-auto"  
@@ -450,9 +572,29 @@ const LandingBodyComp=()=>{
                                             width:(WindowWidth>=1550)?250:180,
                                             height:(WindowWidth>=1550)?250:180,
                                             cursor:"pointer"}}>
+
+                                           {(button9RadiusColor==="block")?
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                        backgroundColor:"rgba(0,0,0,0.5)"
+                                                    }}>
+
+                                                </div>:
+                                                <div className="ms-auto"
+                                                    style={{
+                                                        position:"absolute",
+                                                        width:"100%",
+                                                        height:"100%",
+                                                    }}>
+
+                                                </div>}
+
                                             {/* <h1 style={{fontSize:40,fontWeight:"bold",marginTop:30,color:"#fff",textAlign:"center"}}>2.5 M</h1>
                                             <h2 style={{fontSize:20,marginTop:10,fontWeight:"bold",color:"#fff",textAlign:"center"}}>Subscribers</h2> */}
-                                            <img  style={{position:"relative",width:180,height:180,objectfit:"fill"}} src={nflimage9}></img>
+                                            <img  style={{position:"relative",width:180,height:180,objectfit:"fill",zIndex:-1}} src={nflimage9}></img>
                                     </div>
                         </Card>
                         
