@@ -15,7 +15,7 @@ const HeaderImage = require("./BodyImage.jpg");
 const ImageMiddle = require("./football.png");
 const FooterImage = require("./footerImage.png");
 const LogoImage = require("../Navbar/logo-New.png");
-const Video = require("../../static/videos/video1.webm");
+const Video = require("../../static/videos/video2.mp4");
 
 
 const nflimage=require("../../static/images/image1.jpg");
@@ -618,20 +618,22 @@ const LandingBodyComp=()=>{
                                 style={{
                                     position:"relative",width:140,height:140, overflow:"hidden", marginTop:20
                                     }}
-                                    onClick={()=>nav("/shop")}>
+                                    onClick={()=>{return nav("/shop"),setButton1RadiusColor("block")}}
+                                  
+                                    >
                                 <img  style={{position:"absolute",width:140,height:140,objectfit:"fill"}} src={nflimage}></img>
                             </div>
                             <div className="rounded-circle"  
                                 style={{
                                     position:"relative",width:140,height:140, overflow:"hidden", marginTop:20
                                     }}
-                                    onClick={()=>nav("/shop")}>
+                                    onClick={()=>{return nav("/shop"),setButton2RadiusColor("block")}}>
                                 <img  style={{position:"absolute",width:140,height:140,objectfit:"fill"}} src={nflimage3}></img>
                             </div>
                             <div className="rounded-circle"  
                                 style={{
                                     position:"relative",width:140,height:140, overflow:"hidden", marginTop:20}}
-                                    onClick={()=>nav("/shop")}>
+                                    onClick={()=>{return nav("/shop"),setButton3RadiusColor("block")}}>
                                 <img style={{position:"absolute",width:140,height:140,objectfit:"fill"}} src={nflimage12}></img>
                             </div>
                         </Col>
@@ -639,19 +641,19 @@ const LandingBodyComp=()=>{
                             <div className="rounded-circle"  
                                 style={{
                                     position:"relative",width:140,height:140, overflow:"hidden", marginTop:20}}
-                                    onClick={()=>nav("/shop")}>
+                                    onClick={()=>{return nav("/shop"),setButton3RadiusColor("block")}}>
                                 <img  style={{position:"absolute",width:140,height:140,objectfit:"fill"}} src={nflimage13}></img>
                             </div>
                             <div className="rounded-circle"  
                                 style={{
                                     position:"relative",width:140,height:140, overflow:"hidden", marginTop:20}}
-                                    onClick={()=>nav("/shop")}>
+                                    onClick={()=>{return nav("/shop"),setButton4RadiusColor("block")}}>
                                 <img  style={{position:"absolute",width:140,height:140,objectfit:"fill"}} src={nflimage11}></img>
                             </div>
                             <div className="rounded-circle"  
                                 style={{
                                     position:"relative",width:140,height:140, overflow:"hidden", marginTop:20}}
-                                    onClick={()=>nav("/shop")}>
+                                    onClick={()=>{return nav("/shop"),setButton5RadiusColor("block")}}>
                                 <img  style={{position:"absolute",width:140,height:140,objectfit:"fill"}} src={nflimage10}></img>
                             </div>
                         </Col>
