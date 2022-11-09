@@ -15,7 +15,11 @@ const HeaderImage = require("./BodyImage.jpg");
 const ImageMiddle = require("./football.png");
 const FooterImage = require("./footerImage.png");
 const LogoImage = require("../Navbar/logo-New.png");
+<<<<<<< Updated upstream
 const Video = require("../../static/videos/video2.mp4");
+=======
+const Video = require("../../static/videos/video.mp4");
+>>>>>>> Stashed changes
 
 
 const nflimage=require("../../static/images/image1.jpg");
@@ -58,9 +62,10 @@ const LandingBodyComp=()=>{
            
                 <Row className="justify-content-center">
                 {/* <div className="ml-auto" style={{backgroundColor:"rgba(0,0,0,0.5)", width:"100%",height:(WindowWidth>=1280)?700:300,position:"absolute",top:0,left:0,zIndex:-1}}></div> */}
-                    <div className="ml-auto" style={{width:"100%",height:(WindowWidth>=1280)?600:(WindowWidth>=1550)?800:200,overflow:"hidden",zIndex:-2}}>
-                        <video autoPlay={true} muted loop={true} style={{width:"100%", resize:"cover"}}>
-                            <source type="video/webm"  src={Video}></source>
+                    <div className="ml-auto" style={{width:"100%",height:(WindowWidth>=1280)?600:(WindowWidth>=1550)?800:200,overflow:"hidden"}}>
+                        <video  autoPlay={true} loop={true}  style={{width:"100%", resize:"cover"}}>
+                            <source src={Video} type="video/mp4"/>
+                            
                         </video>
                         
                     </div>
@@ -84,7 +89,7 @@ const LandingBodyComp=()=>{
                     
                 </Row>
                 {/* Upper Middle */}
-                <Row className="justify-content-center" style={{backgroundColor:"#00538C",maxHeight:"40%"}}>
+                <Row className="justify-content-center" style={{backgroundColor:"#00538C",maxHeight:"40%",position:"relative"}}>
                     <div className="ml-auto" style={{marginTop:80}}>
                         {/* <Col md={4} xxl lg="6">
                             <div className="text-center">
